@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="menu_title">Java</string>
+    <string name="menu_learn">Learn</string>
+    <string name="menu_test">Test</string>
+    <string name="menu_options">Options</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_learn_header">Learn</string>
+    <string name="menu_learn_section1">Section 1</string>
+    <string name="menu_test_header">Test</string>
+    <string name="menu_test_section1">Section 1</string>
+    <string name="menu_options_header">Options</string>
+    <string name="HelloUser_button_reg">registration</string>
+    <string name="HelloUser_button_input">Sign in</string>
+    <string name="HelloUser_login">Input login</string>
+    <string name="HelloUser_password">Input password</string>
+    <string name="registration_title">Registration</string>
+    <string name="reg_inp_name">input name</string>
+    <string name="reg_inp_surname">input surname</string>
+    <string name="reg_inp_group">input group</string>
+    <string name="reg_inp_login">input login</string>
+    <string name="reg_inp_password">input password</string>
+    <string name="reg_but">to register</string>
+    <string name="learn_section1_header">Section 1</string>
+    <string name="learn_section1_theme1">Theme 1</string>
+    <string name="test_section1_header">Section 1</string>
+    <string name="test_section1_theme1">Theme 1</string>
+    <string name="text_learn_sec1_th1">Приведем пример простой программы, который выводит на экран текст \"Hello, world!\".\n
+    public class Program1 {\n
+        \t\t\t\tpublic static void main(String[] args) {\n
+            \t\t\t\t\t\t\tSystem.out.println("Hello, world!");\n
+        \t\t\t\t}\n
+    }\n
+Прежде всего, программа на Java — это класс или несколько классов. Для простейшей программы достаточно одного класса, но он использует класс System, библиотечный, стандартный класс, который устанавливается вместе с компилятором Java.
+Оператор import сообщает компилятору Java, где найти классы, на которые ссылается код. Любой сложный объект использует другие объекты для выполнения тех или иных функций, и оператор импорта позволяет сообщить о них компилятору Java.
+В языке Java невозможно создать просто глобальную функцию, она должна принадлежать какому-то классу. Обычно для этого создается объект класса и из него вызывается функция. При старте Java-программы JVM вызывает функцию с именем main() по имени класса без создания объекта. Для этого функция должна быть объявлена с модификатором static.
+Функция ничего не возвращает, только выполняет печать текста. Тип возвращаемого значения в этом случае — void.
+Функция main() принимает массив объектов класса String. Квадратные скобки для объявления массива можно в Java ставить и до, и после объявления типа. Строки, как и массивы, в Java тоже являются объектами.
+В строке вывода печать осуществляется посредством вызова функции println() статического объекта класса System с именем out класса PrintStream. Для вывода у PrintStream две функции: print() и println(). Вторая после вывода переводит курсор на новую строку.
+Двумя слешами (//) начинаются комментарии — это текст, который компилятор игнорирует.
+    </string>
+    <string name="text_learn_sec1_th2">Все типы данных в Java разделяются на два класса — примитивные и ссылки на объекты.
+Для того чтобы завести переменную, можно в любом месте функции вставить конструкцию
+<![CDATA[<]]>тип<![CDATA[>]]> <![CDATA[<]]>имя переменной<![CDATA[>]]>[ = <![CDATA[<]]>значение<![CDATA[>]]>];
+Например: int a2; double xx = .15;
+Переменные могут называться любой последовательностью латинских букв, цифр и знаков подчеркивания, при этом не могут начинаться с цифры. Основные числовые типы — int — целые числа и double — вещественные.
+Вывод чисел выполняется так же, как и строк, при помощи PrintStream, например
+System.out.println(x + y);
+Для ввода переменных удобно использовать объект класса Scanner.
+Scanner in = new Scanner(System.in);
+Для ввода целых чисел нужно использовать функцию класса Scanner nextInt(), например
+int x = in.nextInt();
+Для чтения вещественных чисел можно использовать функцию nextDouble(), но перед ее использованием нужно настроить Scanner на использование десятичной точки (а не запятой по обычному умолчанию), например, вот так:
+in.useLocale(Locale.US);
+Это нужно сделать всего один раз, лучше в самом начале функции main. При вводе вещественных чисел дробную часть после точки можно опускать. Корректно будет как 35,0 так и просто 35. (с точкой). У вещественных чисел нет жестких ограничений на величину, как у типа int, но при работе с ними возникает погрешность, поэтому нужно быть осторожным.
+С вычислениями в Java все достаточно стандартно. Можно использовать четыре арифметические операции (умножение записывается звездочкой (*), а деление прямым слешем (/)). Деление целых чисел выполняется нацело. Операция процент (%) позволяет вычислить остаток от деления.
+Чтобы изменить переменную, например, получить показания часов через минуту, обычно пишут примерно такой код:
+minutes = minutes + 1;
+Однако в Java есть более удобные средства. Можно записать:
+minutes += 1;
+Существуют комбинированные операции с равенством со всеми основными операциями. То есть возможно использовать -= /= %= и так далее.
+Если увеличение или уменьшение должно быть именно на 1, то можно использовать операции ++ и --.
+Целочисленные типы в Java
+
+
+Вещественные типы в Java
+
+
+Если в выражении участвуют операнды разных типов, происходит их приведение. Приведение в бо́льшую сторону происходит автоматически, в меньшую нужно делать вручную.
+double z = 5 - целое 5 при присваивании будет преобразовано в double
+int x = 3 / 1.5; //НЕВЕРНО!
+Правильно будет: int x = (int)(3 / 1.5);</string>
+    <string name="text_learn_sec1_th3">
+
+<![CDATA[&&]]> И (конъюнкция или логическое умножение) - результат ИСТИНА, если оба операнда ИСТИНА, в остальных случаях — ЛОЖЬ.
+|| ИЛИ (дизъюнкция или логическое сложение) - результат ЛОЖЬ, если оба операнда ЛОЖЬ, в остальных случаях — ИСТИНА.
+! НЕ (отрицание) - унарная операция. Если операнд ИСТИНА, то результат — ЛОЖЬ, и наоборот.
+Среди логических операций наибольший приоритет у операции !, дальше <![CDATA[&&]]> и наименьший приоритет имеет операция ||.
+В выражениях, где встречаются операторы разных типов, сначала выполняются арифметические операции, затем операции сравнения, затем логические операции и в последнюю очередь присваивание.
+В Java нельзя выстраивать цепочки операций сравнения — это строго бинарные операции. Это значит, что двойные условия типа 1≤x≤6 записываются в виде пар логических операций. Для этого нужно разделить такое сложное условие двумя простыми и связать их операцией И (<![CDATA[&&]]>): 1 <![CDATA[<]]> x <![CDATA[&&]]> x <![CDATA[<]]> 6
+Для хранения логических величин в Java имеется специальный тип boolean. Переменные типа boolean могут принимать всего два специальных значения true и false (ИСТИНА и ЛОЖЬ). Значения этого типа можно сравнивать на равенство и производить с ними логические операции, но с ними нельзя производить арифметические вычисления.
+Очень интересной является тернарная операция (операция с тремя операндами) ?
+Синтаксис тернарной операции:
+<![CDATA[<]]>условие<![CDATA[>]]> ? <![CDATA[<]]>значение, если условие истинно<![CDATA[>]]> : <![CDATA[<]]>значение, если ложно<![CDATA[>]]>
+Если условие равно true, то возвращается второй операнд; если условие равно false, то третий.
+Например, удобно записать поиск максимума из двух чисел так:
+max = (a > b ? a : b);
+</string>
+    <string name="text_test_sec1_th1_task1">Cтандартный класс, который устанавливается вместе с компилятором Java:</string>
+    <string name="text_test_sec1_th1_task2">Оператор, который сообщает компилятору Java, где найти классы, на которые ссылается код:</string>
+    <string name="text_test_sec1_th1_task3">Имя функции, которую JVM вызывает при старте Java-программы:</string>
+    <string name="text_test_sec1_th1_task4_1">Заполните пропуски, чтобы объявить функцию с именем “first()”\n
+void </string>
+    <string name="text_test_sec1_th1_task4_2">void </string>
+    <string name="text_test_sec1_th1_task4_3">()</string>
+    <string name="text_test_sec1_th1_task5">Какая функция выводит текст и переводит курсор на новую строку?</string>
+    <string name="text_test_sec1_th1_task5_1">System.out.print()</string>
+    <string name="text_test_sec1_th1_task5_2">System.out()</string>
+    <string name="text_test_sec1_th1_task5_3">System.out.println()</string>
+    <string name="text_test_sec1_th1_task5_4">out.println()</string>
+    <string name="text_test_sec1_th1_task6_1">Заполните пропуски, чтобы программа вывела сумму A и B:\n</string>
+    <string name="text_test_sec1_th1_task6_2">import java.util.Scanner;\n</string>>
+    <string name="text_test_sec1_th1_task6_3"> class Amount{\n</string>
+    <string name="text_test_sec1_th1_task6_4">public static void </string>
+    <string name="text_test_sec1_th1_task6_5">(String[] args) {\n</string>
+		<string name="text_test_sec1_th1_task6_6">Scanner in = new Scanner (System.in);\n
+		int a = in.nextInt();\n
+		int b = in.nextInt();\n</string>
+    <string name="text_test_sec1_th1_task6_7">System.out.</string>
+    <string name="text_test_sec1_th1_task6_8">(a+b);\n</string>
+    <string name="text_test_sec1_th1_task6_9">\t\t}\n
+}
+    </string>
+    <string name="learn_sec1_th1_header">1. Здравствуй, мир!</string>
+    <string name="learn_sec1_th2_header">2. Типы данных и операции</string>
+    <string name="learn_sec1_th3_header">3. Логические выражения</string>
+    <string name="learn_sec1_th4_header">4. Условный оператор</string>
+    <string name="learn_section1_theme2">Theme 2</string>
+    <string name="learn_section1_theme3">Theme 3</string>
+    <string name="test_section1_theme2">Theme 2</string>
+    <string name="test_section1_theme3">Theme 3</string>
+    <string name="test_sec1_th1_header">Здравствуй, мир!</string>
+    <string name="test_sec1_th1_task1_edittext">Введи ответ</string>
+    <string name="test_sec1_th1_butcheck">Check</string>
+</resources>

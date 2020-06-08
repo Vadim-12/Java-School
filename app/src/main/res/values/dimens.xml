@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_sections_textSize">20sp</dimen>
+    <dimen name="menu_button_width">210dp</dimen>
+    <dimen name="menu_button_height">85dp</dimen>
+    <dimen name="menu_button_marginTop">30dp</dimen>
+    <dimen name="menu_header_margin">20dp</dimen>
+    <dimen name="menu_header_textsize">63sp</dimen>
+    <dimen name="menu_line_height">2dp</dimen>
+    <dimen name="HelloUser_button_width">280dp</dimen>
+    <dimen name="HelloUser_button_height">90dp</dimen>
+    <dimen name="but_input_textsize">30sp</dimen>
+    <dimen name="but_reg_margintop">120dp</dimen>
+    <dimen name="test_sec1_th1_padding">20dp</dimen>
+</resources>
